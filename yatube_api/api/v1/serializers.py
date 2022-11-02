@@ -58,7 +58,8 @@ class PostSerializers(serializers.ModelSerializer):
         read_only=True)
 
     class Meta:
-        fields = ('id', 'text', 'author', 'image', 'group', 'pub_date', 'author_name')
+        fields = ('id', 'text', 'author', 'image',
+                  'group', 'pub_date', 'author_name')
         model = Post
 
 
