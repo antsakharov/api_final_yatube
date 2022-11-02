@@ -52,7 +52,10 @@ class PostSerializers(serializers.ModelSerializer):
         read_only=True,
         default=serializers.CurrentUserDefault()
     )
-    author_name = serializers.CharField(source='author.username', default='', read_only=True)
+    author_name = serializers.CharField(
+        source='author.username',
+        default='',
+        read_only=True)
 
     class Meta:
         fields = ('id', 'text', 'author', 'image', 'group', 'pub_date', 'author_name')
