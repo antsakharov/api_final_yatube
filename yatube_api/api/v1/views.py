@@ -12,7 +12,7 @@ from api.v1.serializers import (CommentSerializers, FollowSerializer,
 
 class PostViewSet(viewsets.ModelViewSet):
     """Вьюсет поста"""
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().select_related('author')
     serializer_class = PostSerializers
     permission_classes = (IsOwnerOrReadOnly,)
     pagination_class = LimitOffsetPagination
