@@ -1,56 +1,96 @@
-# API Yatube
+# api_final_yatube 
 
-Апи для сервиса Yatube.
-Сервиса для шеринга своих историй и рассказов
+## Описание проекта: 
 
-## Возможности
+•	**Назначение:** 
 
-- Получение постов для любых пользователей
-- Написание постов для авторизированных пользователей
-- Разбиение постов на группы
-- Получение и работа с комментариями к постам
-- Подписка на авторов
+Финальная версия Api социальной сети yatube
 
-## Технологии
+•	**Реализованный функционал:** 
 
-Для создания были использованы:
-- [Python 3.7.0](https://www.python.org)
-- [Django 3.2.14](https://www.djangoproject.com)
-- [djangorestframework 3.12.4](https://www.django-rest-framework.org)
+С помощью api_final_yatube можно запрашивать данные о постах, группах, комментариях в социальной сети Yatube, а также создавать новые.
 
-и многое другое, со списком всех зависимостей можете ознакомиться в файле [requirements.txt](https://github.com/romaleg07/api_final_yatube/blob/master/requirements.txt)
+•	**Цель выполнения проекта:**
 
-## Установка
+Получить навыки создания API для собственного проекта
 
-Установите виртуальное окружение:
-```sh
-$python3 -m venv <myenvname>
+•	**Стек:**
+
+Python 3.7, Django 3.2, DRF, Pillow 8.3.1, Simple JWT
+
+## Инструкция по развёртыванию проекта
+
+•	**Клонируйте репозиторий:**
+
+```csharp 
+git clone git@github.com:antsakharov/api_final_yatube.git
 ```
 
-После установки запустите его:
-```sh
-$source <myenvname>/scripts/activate
+•	**Установите и активируйте виртуальное окружение:**
+
+**для Linux и MacOS**
+
+```csharp 
+python3 -m venv venv
 ```
 
-Установите зависимости из requirements.txt:
-```sh
-$pip install -r reqiurements.txt
+**для Windows**
+
+```csharp 
+python -m venv venv
 ```
 
-Выполните миграции:
-```sh
-$cd yatube_api
-$python3 manage.py makemigrations
-$python3 manage.py migrate
+```csharp 
+source venv/bin/activate
 ```
 
-Запустите сервер:
-```sh
-$python3 manage.py runserver
+```csharp 
+source venv/Scripts/activate
 ```
 
-Апи доступен по адресу http://127.0.0.1:8000/api/v1/
+•	**Установите зависимости из файла requirements.txt:**
 
-## Документация
+```csharp 
+pip install -r requirements.txt
+```
 
-Вся документация доступна по ссылке: http://127.0.0.1:8000/redoc/#tag/api
+•	**Создайте и выполните миграции:**
+
+```csharp 
+python manage.py makemigrations
+```
+
+```csharp 
+python manage.py migrate
+```
+## Примеры запросов к API:
+
+Получить список всех постов (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/posts/
+```
+
+Получить определенный пост (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/posts/1/
+```
+
+Получить коментарии определенного поста (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/posts/1/comments/
+```
+
+Получить список всех групп (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/groups/
+```
+
+Создать новый пост (POST):
+
+
+(Требуется аутентификация)
+```csharp
+http://127.0.0.1:8000/api/v1/posts/
+```
+
+Документация: http://127.0.0.1:8000/redoc/
